@@ -1,0 +1,49 @@
+IEEE-1284 Parallel Port Device Detection code. Made in 1998 by Craig Hart.
+
+
+Note: This code is released as freeware; use/modify it as you will. No
+warranties of any kind are made or implied.
+
+This code is written for Turbo Pascal (should work in almost any version;
+tested on TP 7). It detects and displays the information from Plug and Play
+(IEEE-1284) compliant Parallel Port devices. Up until now, learning to program
+IEEE-1284 has been almost imposible unless you spent money to purchase the
+standard. I hope to change all that with this code, which is easily read (all
+in one file) and commented for clarity.
+
+This code is based on the IEEE-1284 routines in Linux, originally written by
+Phil Blundell, Carsten Gross and Jose Renau. Please look at the Linux source
+code if you wish to check my sources. The Pascal implementation is entirely my
+own work, and is, IMHO, much clearer to understand since it's not scattered
+across multiple source files, nor full of cryptic C style logical operators.
+
+This routine (IMHO) does _exactly_ what Windows 95 does when detecting PnP
+Parallel devices. You do NOT need an EPP or ECP printer port for this code to
+function. Any old printer port will do. Obviously, you must have an IEEE-1284
+printer or other device attached! This code was tested with a HP Laserjet 5L
+printer, however most current HP printers as well as many printers (from other
+vendors) designed with Windows 95 in mind also respond to this program.
+
+This routine is currently hard coded to I/O port 378, which is LPT1 is the
+majority of computers. Since full source code is released, it is left as an
+exercise to the reader to re-write it for other ports, if required.
+
+*important* This code does NOT work under Windows95, nor most other forms of
+Multitasking. This is because the timing loops are very critical - a difference
+of even 10 milliseconds is enough to ruin your day :-). This code works well
+with Win95 booted to safe mode, command prompt only (but not under restart
+computer in DOS mode!!); and any version of DOS, both with and without memory
+managers. If you added operating system specific calls to give the code 100%
+CPU time this code would then probably work. Another exercise for the reader.
+
+
+You may contact me by Email if you wish to discuss this program or any other
+hardware programming issue (yes, I'm a hardware nut!): chart@hyperlink.net.au
+or my internet website: http://hyperlink.net.au/~chart
+
+I am also active in Fidonet DR_DEBUG, HDCONF, PASCAL, 80xxx and other technical
+and programming echo's, and may be mailed there.
+
+	Craig Hart
+	02-02-98
+
